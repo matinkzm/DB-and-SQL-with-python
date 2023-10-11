@@ -1,2 +1,6 @@
 # DB-and-SQL-with-python
-bring some real world database into a db file and run some necessary queries
+Final project for databases and SQL for data science with python course in coursera.
+
+First import necessary libraries for making dataframes and running sql queries.
+Then make a local database and bring csv data into the local database. after that run necessary queries using execute and fatchall commands.
+
