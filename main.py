@@ -6,10 +6,11 @@ import mysql.connector
     
 # uncomment each task to see the output
     
-    
+# first connect to the database and make a cursor 
 connection = sqlite3.connect("FinalDB")
 cursor = connection.cursor()
 
+# read csv data files and make a local database
 df = pd.read_csv("ChicagoCensusData.csv")
 df.to_sql("CENSUS_DATA", connection, if_exists='replace', index=False, method="multi")
 
@@ -19,6 +20,7 @@ df.to_sql("CHICAGO_CRIME_DATA", connection, if_exists='replace', index=False, me
 df = pd.read_csv("ChicagoPublicSchools.csv")
 df.to_sql("CHICAGO_PUBLIC_SCHOOLS_DATA", connection, if_exists='replace', index=False, method="multi")
 
+# some sql queries
 '''
 cursor.execute("SELECT COUNT(*) FROM CHICAGO_CRIME_DATA")           # problem 1
 result1 = cursor.fetchall()
